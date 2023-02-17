@@ -9,7 +9,7 @@
     // "disableReferencedProjectLoad": true,             /* 减少 TypeScript 自动加载的项目数量 */
 
     /* 语言和环境 */
-    "target": "es2021",                               /* 设置 JavaScript 语言版本, 编译后 JS 版本 */
+    "target": "ES5",                               /* 设置 JavaScript 语言版本, 编译后 JS 版本 */
     "lib": ["DOM", "ES2021"],                                        /* 指定一组描述目标运行时环境的捆绑库声明文件. 比如es5不支持set集合 */
     // "jsx": "preserve",                                /* 指定生成什么 JSX 代码 */
     "experimentalDecorators": true,                   /* 启用对 TC39 stage 2 草稿装饰器的实验性支持 */
