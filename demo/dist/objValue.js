@@ -1,3 +1,3 @@
-let obj = { username: 'jinle', age: 18 };
-const username = 'username';
-const res = obj[username];
+var obj = { username: 'jinle', age: 18 };
+var username = 'username';
+var res = obj[username];
