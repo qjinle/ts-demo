@@ -1,6 +1,7 @@
 declare class Animal {
     name: string;
     milkName: string;
+    static staticNum: number;
     constructor(name: string);
     run(): string;
 }

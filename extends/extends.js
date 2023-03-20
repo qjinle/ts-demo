@@ -1,4 +1,6 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
+    // 继承静态属性
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -9,30 +11,35 @@ var __extends = (this && this.__extends) || (function () {
         if (typeof b !== "function" && b !== null)
             throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
+        // 寄生组合式继承
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Animal = (function () {
-    function Animal(name) {
+var Parent = /** @class */ (function () {
+    function Parent(name, age) {
         this.name = name;
+        this.age = age;
     }
-    Animal.prototype.run = function () {
-        return "".concat(this.name, " is running");
+    Parent.prototype.eat = function () {
+        console.log(this.name + "吃饭");
     };
-    Animal.staticNum = 1;
-    return Animal;
+    Parent.staticNum = 1;
+    Parent.logStaticNum = function () { console.log(Parent.staticNum); };
+    return Parent;
 }());
-var Cat = (function (_super) {
-    __extends(Cat, _super);
-    function Cat(name) {
-        var _this = _super.call(this, name) || this;
-        console.log(_this.name);
-        console.log(Cat.staticNum);
+var Son = /** @class */ (function (_super) {
+    __extends(Son, _super);
+    function Son(name, age, favor, sex) {
+        // 寄生组合式继承
+        var _this = _super.call(this, name, age) || this;
+        _this.favor = favor;
+        _this.sex = sex;
         return _this;
     }
-    Cat.prototype.run = function () {
-        return 'Meow, ' + _super.prototype.run.call(this);
-    };
-    return Cat;
-}(Animal));
+    return Son;
+}(Parent));
+var son = new Son("jinle", 18, "打篮球", "男");
+son.eat();
+Son.logStaticNum();
+console.log(son);
